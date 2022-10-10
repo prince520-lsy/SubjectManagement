@@ -1,14 +1,20 @@
 <template>
   <div>
-    <router-link to="/foo">Foo</router-link>|
-    <router-link to="/bar">Bar</router-link>
+    <router-link :to="{ path:'/foo',query:{age:18,gender:'male'}}">Foo</router-link>|
+    <router-link :to="'/bar'+bookId">Bar</router-link>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
+// import { query } from 'express';
 
+export default {
+  data() {
+    return {
+      bookId: 1
+    }
+  }
 }
 </script>
 
